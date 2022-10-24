@@ -1,0 +1,20 @@
+<html>
+   <head>
+       <title>Vanilla JavaScript API Example</title>
+       <script type="text/javascript" src="vanilla-js-api.js"></script>
+   </head>
+   <body>
+      <h1>Vanilla JavaScript API Example</h1>
+      <form>
+        <h2>Choose Api:</h2>
+        <input type="radio" id="typicode" name="api_to_use" value="typicode" checked>
+        <label for="html">Json Place Holder Data From </label><a href="https://jsonplaceholder.typicode.com/">Typicode.com</a>
+        <br><br>
+        <button type="button" onclick="getAllUsers()">Get Users</button>
+      </form>
+
+      <div id='users' style="float:left; min-width:10%; max-width:15%"></div>
+
+	  <div id='posts' style="float:right; max-width:85%"></div>
+   </body>
+</html>
