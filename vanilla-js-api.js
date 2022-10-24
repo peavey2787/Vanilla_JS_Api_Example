@@ -1,8 +1,8 @@
 function getAllUsers(){
 	
-	var users = [];
+    var users = [];
 	  
-	// Setup request to api
+    // Setup request to api
     var request = new XMLHttpRequest(),
     method = 'GET',
     url = 'https://jsonplaceholder.typicode.com/posts';
@@ -41,10 +41,11 @@ function getAllUsers(){
     };
 
   request.send();
-
 }
+
 function getPostsByUserId(userId){
-	// Send request to api
+    
+    // Setup request to api
     var request = new XMLHttpRequest(),
     method = 'GET',
     url = 'https://jsonplaceholder.typicode.com/posts?userId=' + userId;
@@ -58,19 +59,19 @@ function getPostsByUserId(userId){
 	  // Create the html
 	  var postHtml = '<h2>Posts By User ' + userId + '</h2><br><table style="border-spacing: 30px"><th>Post Id</th><th>Title</th><th>Body</th>';	
 		  
-		  // Traverse each post
-		  for(var post in result) {
-			  
-			  // If this post was made by the specified user
-			  if(result[post]['userId'] == userId) {
+	  // Traverse each post
+	  for(var post in result) {
+	  		  
+	  	// If this post was made by the specified user
+	  	if(result[post]['userId'] == userId) {
 				  
-				  // Create the post html
-				  postHtml += '<tr style="outline: thin solid"><td>' + result[post]['id'] + '</td>';
-				  postHtml += '<td>' + result[post]['title'] + '</td>'; 
-				  postHtml += '<td>' + result[post]['body'] + '</td>'; 
-				  postHtml += '</tr>';					
-			  }		 
-		  }	  
+	  		// Create the post html
+	  		postHtml += '<tr style="outline: thin solid"><td>' + result[post]['id'] + '</td>';
+	  		postHtml += '<td>' + result[post]['title'] + '</td>'; 
+			postHtml += '<td>' + result[post]['body'] + '</td>'; 
+			postHtml += '</tr>';					
+		}		 
+	  }	  
 	  
 	  postHtml += '</table>';
 	  
@@ -81,5 +82,4 @@ function getPostsByUserId(userId){
     };
 
   request.send();
-
 }
